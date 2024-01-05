@@ -1,0 +1,144 @@
+.range {
+  width: 100%;
+  height: 400px;
+  background-color: #f4f5f7;
+  display: inline-flex;
+  padding-top: 50px;
+}
+
+.item-head {
+  float: left;
+  background-color: #d9d9d9;
+  width: 40%;
+  margin-left: 7%;
+  border-radius: 10px;
+
+  .item-left {
+    float: left;
+    justify-content: space-between;
+    background-color: #d9d9d9;
+  }
+  .active-left {
+    animation: left-loader 2s forwards;
+  }
+  .item-right {
+    float: right;
+
+    justify-content: space-between;
+    background-color: #d9d9d9;
+  }
+  .active-right {
+    animation: right-loader 2s forwards;
+  }
+}
+
+@keyframes right-loader {
+  0% {
+    opacity: 0;
+    transform: translateX(+100px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes left-loader {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@media (min-width: 1061px) {
+  .item-head {
+    height: 50px;
+  }
+  h2 {
+    padding-top: 13px;
+    font-size: 24px;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  .item-right {
+    width: 48%;
+    height: 40px;
+    margin-top: 16px;
+    border-radius: 10px;
+  }
+  .item-left {
+    width: 48%;
+    height: 40px;
+    margin-top: 16px;
+    border-radius: 10px;
+  }
+  h3 {
+    padding-top: 10px;
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1060px) and (min-width: 801px) {
+  .item-head {
+    height: 40px;
+  }
+  h2 {
+    padding-top: 9px;
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  .item-right {
+    width: 48%;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+  .item-left {
+    width: 48%;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+  h3 {
+    padding-top: 5px;
+    font-size: 14px;
+    text-align: center;
+  }
+}
+@media (max-width: 800px) {
+  .item-head {
+    height: 40px;
+  }
+  h2 {
+    padding-bottom: 10px;
+    padding-top: 6px;
+    font-size: 16px;
+    text-align: center;
+  }
+  .item-right {
+    width: 100%;
+    height: 35px;
+    margin-top: 8px;
+    border-radius: 10px;
+  }
+  .item-left {
+    width: 100%;
+    height: 35px;
+    margin-top: 8px;
+    border-radius: 10px;
+  }
+  h3 {
+    padding-top: 3px;
+    font-size: 12px;
+    text-align: center;
+  }
+}
