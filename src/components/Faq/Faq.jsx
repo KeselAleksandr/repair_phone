@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import '../Faq/Faq.scss';
 
-function Faq() {
+function Faq({ setFaq }) {
+  const ulRef = useRef();
+
+  useEffect(() => {
+    setFaq(ulRef);
+  }, []);
   return (
-    <div id="faq">
+    <div ref={ulRef} id="faq">
       <div>
         <span class="title">Оплата</span>
         <br />

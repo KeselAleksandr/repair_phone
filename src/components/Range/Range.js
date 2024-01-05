@@ -1,25 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../Range/Range.scss';
-import { useInView } from 'react-intersection-observer';
 
-function Range({ id }) {
+function Range({ setRange }) {
   const [active, setActive] = useState(false);
-  const { ref, inView, entry } = useInView({
-    threshold: 0.5,
-  });
-
+  const ulRef = useRef();
   useEffect(() => {
-    const elem = document.querySelector('.item-head');
-    const position = elem.getBoundingClientRect();
-    id = position;
-    if (inView) {
-      setActive(!active);
-    }
-  }, [inView]);
+    setRange(ulRef);
+  }, []);
 
   return (
-    <div className="range">
-      <div ref={ref} className="item-head">
+    <div ref={ulRef} className="range">
+      <div className="item-head">
         <h2>Ремонт телефонов</h2>
         <div className={`item-left ${active ? 'active-left' : ''}`}>
           <h3>Замена модуля</h3>

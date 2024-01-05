@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import '../Contact/Contact.scss';
 
-function Contact() {
+function Contact({ setContact }) {
+  const ulRef = useRef();
+  useEffect(() => {
+    setContact(ulRef);
+  }, []);
   return (
-    <div id="contacts">
+    <div ref={ulRef} id="contacts">
       <center>
         <h5>Обратная связь</h5>
       </center>

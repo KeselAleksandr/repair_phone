@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import '../Advantage/Advantage.scss';
 
-function Advantage() {
+function Advantage({ setAdvantage }) {
+  const ulRef = useRef();
+  useEffect(() => {
+    setAdvantage(ulRef);
+  }, []);
+
   return (
-    <div id="overview">
+    <div ref={ulRef} id="overview">
       <h1>Преимущества</h1>
       <div className="block-adv">
         <img src="/img/diagnostic.jpg" alt="diagnostic" />

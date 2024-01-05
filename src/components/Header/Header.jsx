@@ -1,26 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../Header/Header.scss';
+import AppContext from '../../AppContext';
 
 function Header() {
-  const massButton = ['Обратная связь', 'Услуги', 'Преимущества', 'Контакты', 'Авторизация'];
+  const { faq, range, advantage, adress, contact } = useContext(AppContext);
+
+  const scrollToRef = (value) => {
+    value.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <header>
       <div className="img">
         <img src="img/logo.png" />
       </div>
-      <div className="button-head">
+      <div onClick={() => scrollToRef(contact)} className="button-head">
         <span>Обратная связь</span>
       </div>
-      <div className="button-head">
+      <div onClick={() => scrollToRef(range)} className="button-head">
         <span>Услуги</span>
       </div>
-      <div className="button-head">
+      <div onClick={() => scrollToRef(advantage)} className="button-head">
         <span>Преимущества</span>
       </div>
-      <div className="button-head">
+      <div onClick={() => scrollToRef(adress)} className="button-head">
         <span>Контакты</span>
       </div>
-      <div className="button-head">
+      <div onClick={() => scrollToRef(faq)} className="button-head">
         <span>Авторизация</span>
       </div>
     </header>

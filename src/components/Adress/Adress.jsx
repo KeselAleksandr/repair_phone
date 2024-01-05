@@ -1,9 +1,15 @@
-import React from 'react';
-import '../Gallery/Gallery.scss';
+import React, { useEffect, useRef } from 'react';
+import './Adress.scss';
 
-function Gallery() {
+function Adress({ setAdress }) {
+  const ulRef = useRef();
+
+  useEffect(() => {
+    setAdress(ulRef);
+  }, []);
+
   return (
-    <div className="gallery">
+    <div ref={ulRef} className="adress">
       <h1>Контакты</h1>
       <div className="block-contact">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae asperiores
@@ -24,4 +30,4 @@ function Gallery() {
   );
 }
 
-export default Gallery;
+export default Adress;
